@@ -1,6 +1,4 @@
-Sass: Syntactically Awesome Stylesheets
-is a CSS preprocessor that adds features like variables, nesting, mixins, functions, 
-and loops to make CSS more efficient and maintainable
+
 
  allows nesting of CSS rules
 article {
