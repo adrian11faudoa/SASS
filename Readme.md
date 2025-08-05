@@ -4,6 +4,20 @@ Sass: Syntactically Awesome Stylesheets
 is a CSS preprocessor that adds features like variables, nesting, mixins, functions, 
 and loops to make CSS more efficient and maintainable
 
+Use of Sass cli:
+```
+    sass source/index.scss css/index.css
+```
+
+**Source Map**
+Use Case	        Keep .css.map?
+Development	        ✅ Yes
+Production website	❌ No (optional)
+
+To not generate source map
+```
+    sass --no-source-map styles.scss styles.css
+```
 
 One feature of Sass that's different than CSS is it uses variables. 
 They are declared and set to store data, similar to JavaScript.
@@ -244,12 +258,15 @@ This is a great way to group similar code into a module to keep it organized.
 
 Names for partials start with the underscore (_) character, which tells Sass it is a small segment of CSS and not to convert it into a CSS file. 
 Also, Sass files end with the .scss file extension. 
-To bring the code in the partial into another Sass file, use the @import directive.
+To bring the code in the partial into another Sass file, use the **@import** directive.
+
+Sass is moving away from **@import** because it has limitations and confusing behavior (e.g., duplicated styles, global leaks). The modern replacement is:
+**@use** '...';
 
 For example, if all your mixins are saved in a partial named "_mixins.scss", and they are needed in the "main.scss" file, this is how to use them in the main file:
 Example Code:
 ```
-    @import 'mixins'
+    @use 'variables' as v;
 ```
 Note that the underscore and file extension are not needed in the import statement - Sass understands it is a partial. 
 Once a partial is imported into a file, all variables, mixins, and other code are available to use.

@@ -1,0 +1,9 @@
+@use 'variables' as v;
+
+.header{
+    text-align: center;
+}
+.blog-post, h2 {
+    color: v.$var1;
+}
+

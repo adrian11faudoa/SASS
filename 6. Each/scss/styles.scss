@@ -1,0 +1,9 @@
+@use "sass:string";
+
+@each $color in 'blue', 'black', 'red' {
+    .#{$color}-bg {background-color: string.unquote($color);}
+}
+div {
+    height: 200px;
+    width: 200px;
+}
